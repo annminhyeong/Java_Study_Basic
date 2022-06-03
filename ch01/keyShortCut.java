@@ -13,5 +13,6 @@ public class keyShortCut {
 		// ctrl + i : 자동 들여쓰기
 		// ctrl + / : 주석 (토글)
 		// ctrl + space : 자동완성
+		// ctrl + shift + o : 자동 import 추가
 	}
 }
