@@ -14,5 +14,7 @@ public class keyShortCut {
 		// ctrl + / : 주석 (토글)
 		// ctrl + space : 자동완성
 		// ctrl + shift + o : 자동 import 추가
+		// 우클릭 -> show in ->  system explore : 해당파일 위치로 이동
+		// alt + shift + m : 메서드 추출
 	}
 }
