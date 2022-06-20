@@ -18,5 +18,7 @@ public class keyShortCut {
 		// alt + shift + m : 메서드 추출
 		// ctrl + o : 메서드 목록
 		// ctrl + 우클릭 or f3 : 해당메서드로 이동
+		// 우클릭 - Refactor - Rename : 변수이름 전부 바꾸기
+		// Source - Generate HasCode() and equals() : 주소비교 -> 값비교
 	}
 }
