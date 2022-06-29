@@ -1,5 +1,8 @@
 package ch13;
 
+//static yield() : 남은 시간을 다음 쓰레드에게 양보하고, 자신(현재 쓰레드)은 실행대기한다.
+//yield와 interrupt를 적절히 사용하면 응답성과 효율을 높일 수 있다. 
+
 public class Ex13 {
 	public static void main(String[] args) {
 		ThreadEx13_1 th1 = new ThreadEx13_1("*");
@@ -49,10 +52,12 @@ class ThreadEx13_1 implements Runnable{
 
 	void stop() {
 		stopped = true;
+		th.interrupt();
 	}
 	
 	void suspend() {
 		suspended = true;
+		th.interrupt();
 	}
 	
 	void resume() {
@@ -62,11 +67,15 @@ class ThreadEx13_1 implements Runnable{
 	@Override
 	public void run() {
 		while (!stopped) {
-			if(!stopped)
+			if(!suspended) {
 				System.out.println(Thread.currentThread().getName());
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {}
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {}
+			}else {
+				Thread.yield();
+			}
+
 		}
 	}
 	
